@@ -1,3 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 
-# Create your views here.
+def home(request):   
+    return render(request,'../templates/index.html')
+
+def usecase(request):   
+    return render(request,'list usecase.html')
+
+def profile(request):   
+    return render(request,'profile usecase.html')
+
+def form(request):
+    return render(request,'form.html')
