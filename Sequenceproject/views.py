@@ -10,3 +10,6 @@ def usecase(request):
 
 def profile(request):   
     return render(request,'profile usecase.html')
+
+def form(request):
+    return render(request,'form.html')
