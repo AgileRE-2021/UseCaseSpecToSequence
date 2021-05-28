@@ -6,6 +6,27 @@
       padding-right: 5%;
       margin-right: 3;
     }
+    .nav {
+    border-bottom: 1px solid black;
+    }
+
+    .crumbs ol {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .crumb {
+        display: inline-block;
+    }
+
+    .crumb a::after {
+        display: inline-block;
+        color: #000;
+        content: '>';
+        font-size: 80%;
+        font-weight: bold;
+        padding: 0 3px;
+    }
   </style>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -37,7 +58,16 @@
           <ul class="navbar-nav mr-3">
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
             <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+            <nav class="crumbs">
+              <ol>
+                  <li class="crumb"><a class="text-light" href="/">List Project</a></li>
+                  <li class="crumb"><a class="text-light" href="/usecase">List Usecase</a></li>
+              </ol>
+            </nav>
           </ul>
+          
+
+
           {% comment %} <div class="search-element">
             <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
             <button class="btn" type="submit"><i class="fas fa-search"></i></button>
