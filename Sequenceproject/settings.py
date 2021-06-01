@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Aplikasi Todo
-    'generation.apps.GenerationConfig',
+    'generation',
 ]
 
 MIDDLEWARE = [

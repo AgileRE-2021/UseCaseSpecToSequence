@@ -6,13 +6,16 @@ class Project(models.Model):
     project_desc = models.CharField(max_length=200)
     
     def __str__(self):
-        return self.project_name
+        return self.project_id
 
 class Usecase(models.Model):
     usecase_id = models.AutoField(primary_key=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     usecase_name = models.CharField(max_length=200)
     created_at = models.DateTimeField()
+    
+    def __str__(self):
+        return self.usecase_id
 
 class Usecasespec(models.Model):
     spec_id = models.AutoField(primary_key=True)

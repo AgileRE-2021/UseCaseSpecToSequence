@@ -253,28 +253,62 @@
                             <th class="sort-handler">
                               <i class="fas fa-th"></i>
                             </th>
-                            <th>No</th>
-                            <th>Nama Project</th>
-                            <th>Deskripsi Project</th>
+                            <th>Project Name</th>
+                            <th>Description</th>
                             <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
                           {% if tasks %}
-                          {% for task in tasks %}
-                          <tr>
-                              <td>{{ project_id }}</td>
-                              <td>{{ project_name }}</td>
-                              <td>{{ project_desc }}</td>
-                              <td>
-                                <a href="#" class="btn btn-warning">View</a>
-                                <a href="#" class="btn btn-danger">Delete</a>
-                              </td>
-                          </tr>
-                          {% endfor %}
+                            {% for proyek in tasks %}
+                            <tr>
+                                <td>{{ proyek.project_id }}</td>
+                                <td>{{ proyek.project_name }}</td>
+                                <td>{{ proyek.project_desc }}</td>
+                                <td>
+                                  <button type="button" data-toggle="modal" data-target="#modal-{{proyek.project_id}}" class="btn btn-info">Edit</button> 
+                                  <a href="#" class="btn btn-warning">View</a>
+                                  <a href="/generation/hapus_proyek/{{proyek.project_id}}" onclick="return confirm('Are you sure want to delete?')" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                            <!-- Modal Edit -->
+                            <div class="modal fade" data-backdrop="false" id="modal-{{proyek.project_id}}"" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Edit Project</h5>
+                                    <button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                          
+                                    <form method="post" action="/generation/ganti_proyek/{{proyek.project_id}}">
+                                      {% csrf_token %}
+                                      <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Project Name:</label>
+                                        <input required name="project_name" value="{{proyek.project_name}}" type="text" class="form-control" id="recipient-name">{{ form.project_name }}
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Description:</label>
+                                      {% csrf_token %}
+                                      {% csrf_token %}
+                                        <input required name="project_desc" value="{{proyek.project_desc}}" style="height:100px" type="text" class="form-control" id="recipient-name">{{ form.project_desc }}
+                                      </div>
+                          
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" value="" class="btn btn-primary">Save</button>
+                                  </div>
+                                    </form>
+                                </div>
+                              </div>
+                            </div>
+                            {% endfor %}
                         {% else %}
                           <tr>
-                            <td colspan="5">Data tidak ditemukan.</td>
+                            <td colspan="5">Project is not found.</td>
                           </tr>
                         {% endif %}
                         </tbody>
@@ -332,12 +366,12 @@
           <form method="post" action="/generation/tambah_proyek">
             {% csrf_token %}
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Name Project:</label>
-              <input required name="nama_proyek" type="text" class="form-control" id="recipient-name">{{ form.project_name }}
+              <label for="recipient-name" class="col-form-label">Project Name:</label>
+              <input required name="project_name" type="text" class="form-control" id="recipient-name">{{ form.project_name }}
             </div>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Deskripsi Project:</label>
-              <input required name="desk_proyek" type="text" class="form-control" id="recipient-name">{{ form.project_desc }}
+              <label for="recipient-name" class="col-form-label">Description:</label>
+              <input required name="project_desc" type="text" style="height:100px" class="form-control" id="recipient-name">{{ form.project_desc }}
             </div>
 
         </div>

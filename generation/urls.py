@@ -9,4 +9,6 @@ urlpatterns = [
     path('profile', views.profile, name='profile'),
     path('form', views.form, name='form'),
     path('tambah_proyek', views.tambah_proyek, name='tambah_proyek'),
+    path('hapus_proyek/<int:id>', views.hapus_proyek),
+    path('ganti_proyek/<int:id>', views.ganti_proyek),
 ]

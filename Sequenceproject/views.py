@@ -5,14 +5,10 @@ from generation.models import Project, Usecase
 from django.template.loader import render_to_string
 from Sequenceproject.forms import ProjectForm
 from django.http import JsonResponse
-from django.views.generic.edit import UpdateView
 
 def home(request):   
-    tasks = Project.objects.all()
-    context = {
-        'tasks': tasks
-    }
-    return render(request,'index.html', context)
+    proyek = Project.objects.all()
+    return render(request,'index.html',{'posts':proyek})
 
 def tambah_proyek(request):
     if request.method == "POST":  
@@ -20,28 +16,16 @@ def tambah_proyek(request):
         if form.is_valid():  
             try:  
                 form.save()  
-                return redirect('/generation')  
+                return redirect('/generation1')  
             except:  
-                return redirect('/generation') 
+                return redirect('/generation2') 
         else:
-            return redirect('/generation') 
+            return redirect('/generation3') 
     else:  
         form = ProjectForm()  
+        return redirect('/generation4') 
     return render(request,'index.html',{'form':form})
-
-def hapus_proyek(request, id):  
-    proyek = Project.objects.get(project_id=id)  
-    proyek.delete()  
-    return redirect('/generation')  
-
-def ganti_proyek(request, id):  
-    proyek = Project.objects.get(project_id=id)  
-    form = ProjectForm(request.POST, instance = proyek)  
-    if form.is_valid():  
-        form.save()  
-        return redirect("/generation")  
-    return render(request, 'index.html', {'proyek': proyek})
-
+    
 def usecase(request):   
     tasks = Usecase.objects.all()
     context = {
