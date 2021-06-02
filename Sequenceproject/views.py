@@ -13,3 +13,6 @@ def profile(request):
 
 def form(request):
     return render(request,'form.html')
+
+def generate(request):
+    return render(request,'generate.html')
