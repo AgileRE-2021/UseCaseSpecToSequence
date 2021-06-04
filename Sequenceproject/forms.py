@@ -7,9 +7,10 @@ from generation.models import Project, Usecase
 class ProjectForm(forms.ModelForm):
     class Meta:  
         model = Project 
-        fields = "__all__"
+        fields = '__all__'
 
 class UsecaseForm(forms.ModelForm):
     class Meta:
         model = Usecase
-        fields = "__all__"
+        fields = '__all__'
+        exclude = ('project',)

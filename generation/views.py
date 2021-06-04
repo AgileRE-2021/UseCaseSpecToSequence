@@ -18,6 +18,7 @@ def tambah_proyek(request):
     if request.method == 'POST':  
         form = ProjectForm(request.POST)  
         if form.is_valid():  
+            print(form)
             try:  
                 form.save()  
                 return redirect('/generation')  
@@ -42,10 +43,9 @@ def ganti_proyek(request, id):
         return redirect('/generation')  
     return render(request, 'index.html', {'proyek': proyek})
 
-def usecase(request, id):   
-    usecase = Usecase.objects.filter(project=id)
+def usecase(request, id):
     proyek = Project.objects.get(project_id=id)
-    tasks = Usecase.objects.all()
+    tasks = Usecase.objects.filter(project=id)
     context = {
         'proyek': proyek,
         'project_id': id,
@@ -54,17 +54,18 @@ def usecase(request, id):
     return render(request,'list usecase.html', context)
 
 def tambah_usecase(request, id):
-    usecase = Usecase.objects.filter(project=id)
     proyek = Project.objects.get(project_id=id)
     form = UsecaseForm()
     if request.method == 'POST':
         form = UsecaseForm(request.POST)
+        print()
         if form.is_valid():
             formulir = form.save(commit=False)
             formulir.project = proyek
             formulir.save()
             return redirect('/generation/'+str(id)+'/usecase')
         else:
+            print(form.errors)
             return redirect('/generation/'+str(id)+'/usecase')
     else:
         form = UsecaseForm()
