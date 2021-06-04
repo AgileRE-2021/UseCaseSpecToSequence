@@ -63,24 +63,26 @@
                   <li class="crumb"><a class="text-light" href="/">List Project</a></li>
                   <li class="crumb"><a class="text-light" href="/usecase">List Usecase</a></li>
                   <li class="crumb"><a class="text-light" href="/form">Form</a></li>
+              </ol> 
+            -->
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb bg-primary text-white-all">
+                <li class="breadcrumb-item">
+                  <a href="/">List Project</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="/usecase">List Usecase</a>
+                  <!--<a href="/usecase">List Usecase</a>-->
+                </li>
+                <li class="breadcrumb-item text-dark" aria-current="page">
+                  Form
+                </li>
               </ol>
-            </nav>-->
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="/">List Project</a>
-              </li>
-              <li class="breadcrumb-item">
-                <a href="/usecase">List Usecase</a>
-                <!--<a href="/usecase">List Usecase</a>-->
-              </li>
-              <li class="breadcrumb-item" aria-current="page">
-                Form
-              </li>
-            </ol>
+            </nav>
           </ul>
         </form>
-        <ul class="navbar-nav navbar-right">
 
+        <ul class="navbar-nav navbar-right">
           {% comment %} <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <img alt="image" src="{% static 'img/avatar/avatar-1.png' %}" class="rounded-circle mr-1">
           </li> {% endcomment %}
