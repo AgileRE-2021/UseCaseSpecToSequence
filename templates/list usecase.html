@@ -136,7 +136,7 @@
           <ul class="sidebar-menu">
               <li class="menu-header">Menu</li>
               <li class="nav-item">
-                <a href="/" ><i class="fas fa-fire"></i><span>List Project</span></a>
+                <a href="/generation" ><i class="fas fa-fire"></i><span>List Project</span></a>
 
               </li>
 
@@ -174,75 +174,28 @@
                               <i class="fas fa-th"></i>
                             </th>
                             <th>No</th>
-                            <th>Name Usecase</th>
+                            <th>Usecase Name</th>
                             <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>
-                              <div class="sort-handler">
-                                <i class="fas fa-th"></i>
-                              </div>
-                            </td>
-                            <td>Usecase A</td>
-                            <td class="align-middle">
-
-                            </td>
-                            <td>
-                              <a href="/generation/form" class="btn btn-warning">View</a>
-                              <a href="#" class="btn btn-danger">Delete</a>
-                            </td>
-
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="sort-handler">
-                                <i class="fas fa-th"></i>
-                              </div>
-                            </td>
-                            <td>Usecase B</td>
-                            <td class="align-middle">
-            
-                              </div>
-                            </td>
-                            <td>
-                               <a href="#" class="btn btn-warning">View</a>
-                              <a href="#" class="btn btn-danger">Delete</a>
-                            </td>
-
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="sort-handler">
-                                <i class="fas fa-th"></i>
-                              </div>
-                            </td>
-                            <td>Usecase C</td>
-                            <td class="align-middle">
-
-                            </td>
-                            <td>
-                               <a href="#" class="btn btn-warning">View</a>
-                              <a href="#" class="btn btn-danger">Delete</a>
-                            </td>
-
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="sort-handler">
-                                <i class="fas fa-th"></i>
-                              </div>
-                            </td>
-                            <td>Usecase D</td>
-                            <td class="align-middle">
-
-                            </td>
-                            <td>
-                               <a href="#" class="btn btn-warning">View</a>
-                              <a href="#" class="btn btn-danger">Delete</a>
-                            </td>
-                          </tr>
+                          {% if tasks %}
+                            {% for usecase in tasks %}
+                              <tr>
+                                <td>{{ usecase.usecase_id }}</td>
+                                <td>{{ usecase.usecase_name }}</td>
+                                <td>
+                                  <button type="button" data-toggle="modal" data-target="#modal-{{usecase.usecase_id}}" class="btn btn-info">Edit</button>
+                                  <a href="/generation/{{proyek.project_id}}/usecase/{{usecase.usecase_id}}/form" class="btn btn-warning">View</a>
+                                  
+                                </td>
+                              </tr>
+                            {% endfor %}
+                          {% else %}
+                            <tr>
+                              <td colspan="5">Usecase is not found.</td>
+                            </tr>
+                          {% endif %}
                         </tbody>
                       </table>
                     </div>
@@ -295,11 +248,11 @@
         </div>
         <div class="modal-body">
 
-          <form method="post" action="/tambah_proyek">
+          <form method="post" action="/generation/{{proyek.project_id}}/tambah_usecase">
             {% csrf_token %}
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Name Usecase:</label>
-              <input required name="nama_proyek" type="text" class="form-control" id="recipient-name">{{ form.nama_proyek }}
+              <input required name="usecase_name" type="text" class="form-control" id="recipient-name">{{ form.usecase_name }}
             </div>
 
         </div>

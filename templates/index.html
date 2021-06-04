@@ -76,7 +76,7 @@
           <ul class="sidebar-menu">
               <li class="menu-header">Menu</li>
               <li class="nav-item active">
-                <a href="/" ><i class="fas fa-fire"></i><span>List Project</span></a>
+                <a href="/generation" ><i class="fas fa-fire"></i><span>List Project</span></a>
 
               </li>
 
@@ -267,12 +267,12 @@
                                 <td>{{ proyek.project_desc }}</td>
                                 <td>
                                   <button type="button" data-toggle="modal" data-target="#modal-{{proyek.project_id}}" class="btn btn-info">Edit</button> 
-                                  <a href="#" class="btn btn-warning">View</a>
+                                  <a href="/generation/{{proyek.project_id}}/usecase" class="btn btn-warning">View</a>
                                   <a href="/generation/hapus_proyek/{{proyek.project_id}}" onclick="return confirm('Are you sure want to delete?')" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                             <!-- Modal Edit -->
-                            <div class="modal fade" data-backdrop="false" id="modal-{{proyek.project_id}}"" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" data-backdrop="false" id="modal-{{proyek.project_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
