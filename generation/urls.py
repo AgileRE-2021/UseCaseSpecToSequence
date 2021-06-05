@@ -15,4 +15,6 @@ urlpatterns = [
     path('<int:id>/tambah_usecase', views.tambah_usecase, name='tambah_usecase'),
     #path('<int:id>/hapus_proyek/<int:id>', views.hapus_usecase),
     #path('<int:id>/ganti_usecase/<int:id>', views.ganti_usecase),
+
+    path('tambah_usecasespec', views.tambah_usecasespec, name='tambah_usecasespec')
 ]

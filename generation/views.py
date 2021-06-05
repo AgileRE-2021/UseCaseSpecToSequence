@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from generation.models import Project, Usecase
 from django.template.loader import render_to_string
-from Sequenceproject.forms import ProjectForm, UsecaseForm
+from Sequenceproject.forms import ProjectForm, UsecaseForm ,UsecasespecForm
 from django.http import JsonResponse
 from django.views.generic.edit import UpdateView
 
@@ -58,7 +58,6 @@ def tambah_usecase(request, id):
     form = UsecaseForm()
     if request.method == 'POST':
         form = UsecaseForm(request.POST)
-        print()
         if form.is_valid():
             formulir = form.save(commit=False)
             formulir.project = proyek
@@ -82,3 +81,24 @@ def profile(request):
 
 def form(request):
     return render(request,'form.html')
+
+def tambah_usecasespec(request):
+
+    if request.method == 'GET' :
+        form = UsecasespecForm(request.GET)
+        context = {
+            'usecase' : request.GET.get('usecase'),
+            'spec_actor' : request.GET.get('spec_actor'),
+            'spec_desc' : request.GET.get('spec_desc'),
+            'spec_precon' : request.GET.get('spec_precon'),
+            'spec_precon_object' : request.GET.get('spec_precon_object'),
+            'spec_postcon' : request.GET.get('spec_postcon'),
+            'spec_postcon_object' : request.GET.get('spec_postcon_object')
+        }
+        if form.is_valid() :
+            form.save()
+            return render(request,'form.html',context)
+    
+
+    return render(request,'form.html')
+    
