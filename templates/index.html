@@ -63,9 +63,6 @@
             <!--<nav class="crumbs">-->
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb bg-primary text-white-all">
-                <li class="breadcrumb-item">
-                  <a href="/">List Project</a>
-                </li>
                 <li class="breadcrumb-item"> 
                 </li>
               </ol> 
@@ -109,7 +106,7 @@
           <ul class="sidebar-menu">
               <li class="menu-header">Menu</li>
               <li class="nav-item active">
-                <a href="#" class="nav-link"><i class="fas fa-fire"></i><span>List Project</span></a>
+                <a href="#" class="nav-link"><i class="fas fa-file-alt"></i><span>List Project</span></a>
                 
               </li>
 
@@ -258,26 +255,28 @@
       </div>
 
       <!-- Main Content -->
-      <div class="main-content">
+        <div class="main-content">
+          <section class="section">
+            <div class="section-header">
+              <h1>List Project</h1>
+              <div class="section-header-breadcrumb">
+                <form>
+                  <div class="input-group">
+                    <div class="add">
+                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class ="fas fa-plus"></i> Add Project</a>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                      <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                    </div>
+                  </div>
+                </form>
+                <div class="breadcrumb-item active"><a href="/">List Project</a></div>
+              </div>
+            </div>
       <div class="row">
               <div class="col-12">
                 <div class="card">
-                  <div class="card-header">
-                    <h4> List Project</h4>
-                    <div class="card-header-action ">
-                      <form>
-                        <div class="input-group">
-                          <div class="add">
-                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class ="fas fa-plus"></i> Add Project</a>
-                          </div>
-                          <input type="text" class="form-control" placeholder="Search">
-                          <div class="input-group-btn">
-                            <button class="btn btn-primary"><i class="fas fa-search"></i></button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
                   <div class="card-body p-0">
                     <div class="table-responsive">
                       <table class="table table-striped" id="sortable-table">
