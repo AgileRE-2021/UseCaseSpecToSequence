@@ -77,30 +77,30 @@
                   </div>
                   <div class="form-group">
                     <label>Use case</label>
-                    <input name="usecase" value="{{ usecase }}" type="text" class="form-control">
+                    <input name="usecase" value="{{ usecase.usecase_name }}" type="text" class="form-control">
                   </div>
                   <div class="form-group">
                     <label>Actor</label>
-                    <input name="spec_actor" value="{{ spec_actor }}" type="text" class="form-control">
+                    <input name="spec_actor" value="{{ usecase.actor }}" type="text" class="form-control">
                   </div>
                   <div class="form-group">
                     <label>Description</label>
-                    <input name="spec_desc" value="{{ spec_desc }}" type="text" class="form-control">
+                    <input name="spec_desc" value="{{ usecase.desc }}" type="text" class="form-control">
                   </div><div class="form-group">
                     <label>Pre-condition </label>
-                    <input name="spec_precon" value="{{ spec_precon }}" type="text" class="form-control">
+                    <input name="spec_precon" value="{{ usecase.precon }}" type="text" class="form-control">
                   </div>
                   <div class="form-group">
                     <div class="form-group">
                       <label>Pre-condition object</label>
-                      <input name="spec_precon_object" value="{{ spec_precon_object }}" type="text" class="form-control">
+                      <input name="spec_precon_object" value="{{ usecase.precon_object }}" type="text" class="form-control">
                     </div>
                     <label>Post-condition</label>
-                    <input name="spec_postcon" value="{{ spec_postcon }}" type="text" class="form-control">
+                    <input name="spec_postcon" value="{{ usecase.postcon }}" type="text" class="form-control">
                   </div>
                   <div class="form-group">
                     <label>Post-condition object</label>
-                    <input name="spec_postcon_object" value="{{ spec_postcon_object }}" type="text" class="form-control">
+                    <input name="spec_postcon_object" value="{{ usecase.postcon_object }}" type="text" class="form-control">
                   </div>
                 <div class="card-footer text-right">
                   <button class="btn btn-secondary" type="reset">Reset</button>
