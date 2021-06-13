@@ -66,7 +66,7 @@
         <div class="section-body">
           <div class="row">
             <div class="col-12 col-md-6 col-lg-12"> 
-              <form class="card" method="get" action="/generation/tambah_usecasespec">
+              <form class="card" method="POST" action="/generation/{{ project_id }}/{{ usecase_id }}/tambah_usecasespec">
                 {% csrf_token %}
                 <div class="card-header">
                   <h4>Form</h4>
@@ -77,30 +77,30 @@
                   </div>
                   <div class="form-group">
                     <label>Use case</label>
-                    <input name="usecase" value="{{ usecase.usecase_name }}" type="text" class="form-control">
+                    <input name="usecase_name" value="{{ usecase_name }}" type="text" class="form-control">
                   </div>
                   <div class="form-group">
                     <label>Actor</label>
-                    <input name="spec_actor" value="{{ usecase.actor }}" type="text" class="form-control">
+                    <input name="actor" value="{{ actor }}" type="text" class="form-control">
                   </div>
                   <div class="form-group">
                     <label>Description</label>
-                    <input name="spec_desc" value="{{ usecase.desc }}" type="text" class="form-control">
+                    <input name="desc" value="{{ desc }}" type="text" class="form-control">
                   </div><div class="form-group">
                     <label>Pre-condition </label>
-                    <input name="spec_precon" value="{{ usecase.precon }}" type="text" class="form-control">
+                    <input name="precon" value="{{ precon }}" type="text" class="form-control">
                   </div>
                   <div class="form-group">
                     <div class="form-group">
                       <label>Pre-condition object</label>
-                      <input name="spec_precon_object" value="{{ usecase.precon_object }}" type="text" class="form-control">
+                      <input name="precon_object" value="{{ precon_object }}" type="text" class="form-control">
                     </div>
                     <label>Post-condition</label>
-                    <input name="spec_postcon" value="{{ usecase.postcon }}" type="text" class="form-control">
+                    <input name="postcon" value="{{ postcon }}" type="text" class="form-control">
                   </div>
                   <div class="form-group">
                     <label>Post-condition object</label>
-                    <input name="spec_postcon_object" value="{{ usecase.postcon_object }}" type="text" class="form-control">
+                    <input name="postcon_object" value="{{ postcon_object }}" type="text" class="form-control">
                   </div>
                 <div class="card-footer text-right">
                   <button class="btn btn-secondary" type="reset">Reset</button>
@@ -293,7 +293,7 @@
 
   <!-- Page Specific JS File -->
   <script src="{% static 'js/page/index.js' %}"></script>
-  <script>
+  <!-- <script>
     $('#card-normal').on('click','.normal-add',function(){
       $('.normal').first().clone().appendTo($('#card-normal'));
     })
@@ -306,7 +306,7 @@
     $('#card-alternative').on('click','.alternative-remove',function(){
       $(this).parent().parent().parent().parent().parent().parent().parent().remove();
     })
-  </script>
+  </script> -->
 
   <div class="modal fade" data-backdrop="false" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

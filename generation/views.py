@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from generation.models import Project, Usecase
 from django.template.loader import render_to_string
-from Sequenceproject.forms import ProjectForm, UsecaseForm
+from Sequenceproject.forms import ProjectForm, UsecaseForm, UsecasespecForm
 from django.http import JsonResponse
 from django.views.generic.edit import UpdateView
 
@@ -76,25 +76,28 @@ def tambah_usecase(request, project_id):
 #def ganti_usecase(request, id):
 #    proyek = Project.objects.get(project_id=id)
 
-def tambah_usecasespec(request, project_id, usecase_id):
+def form_tambah_usecasespec(request, project_id, usecase_id):
+    tasks = Usecase.objects.get(usecase_id=usecase_id)   
+    context = {
+        'usecase_id':usecase_id,
+        'project_id':project_id,
+        'usecase_name':tasks.usecase_name,
+        'actor':tasks.actor,
+        'desc':tasks.desc,
+        'postcon':tasks.postcon,
+        'postcon_object':tasks.postcon_object,
+        'precon':tasks.precon,
+        'precon_object':tasks.precon_object
+    }
 
-    tasks = Usecase.objects.get(usecase_id=usecase_id)
-    if request.method == 'GET' :
-        form = UsecaseForm(request.GET)
-        context = {
-            'tasks' : tasks,
-            'usecase_name' : request.GET.get('usecase_name'),
-            'actor' : request.GET.get('actor'),
-            'desc' : request.GET.get('desc'),
-            'precon' : request.GET.get('precon'),
-            'precon_object' : request.GET.get('precon_object'),
-            'postcon' : request.GET.get('postcon'),
-            'postcon_object' : request.GET.get('postcon_object')
-        }
-        if form.is_valid() :
-            form.save()
-            return render(request,'form.html',context)
-    
+    return render(request,'form.html',context)
+
+def tambah_usecasespec(request,project_id,usecase_id):
+    proyek = Usecase.objects.get(usecase_id=usecase_id)  
+    form = UsecasespecForm(request.POST, instance = proyek)  
+    if form.is_valid():  
+        form.save()  
+        return redirect('/generation/'+str(project_id)+'/usecase/'+str(usecase_id)+'/form')  
 
     return render(request,'form.html')
 

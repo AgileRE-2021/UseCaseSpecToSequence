@@ -13,5 +13,10 @@ class ProjectForm(forms.ModelForm):
 class UsecaseForm(forms.ModelForm):
     class Meta:
         model = Usecase
-        fields = '__all__'
-        exclude = ('project',)
+        fields = ['usecase_name']
+
+class UsecasespecForm(forms.ModelForm):
+    class Meta:
+        model = Usecase
+        fields = ['usecase_name','actor','desc','postcon','postcon_object','precon','precon_object']
+
