@@ -101,6 +101,11 @@ def tambah_usecasespec(request,project_id,usecase_id):
 
     return render(request,'form.html')
 
+def hapus_usecase(request,project_id,usecase_id):  
+    usecase = Usecase.objects.get(usecase_id=usecase_id)  
+    usecase.delete()  
+    return redirect('/generation/'+str(project_id)+'/usecase')  
+
 def profile(request):   
     return render(request,'profile usecase.html')
 

@@ -173,7 +173,6 @@
                             <th class="sort-handler">
                               <i class="fas fa-th"></i>
                             </th>
-                            <th>No</th>
                             <th>Usecase Name</th>
                             <th>Action</th>
                           </tr>
@@ -185,9 +184,8 @@
                                 <td>{{ usecase.usecase_id }}</td>
                                 <td>{{ usecase.usecase_name }}</td>
                                 <td>
-                                  <button type="button" data-toggle="modal" data-target="#modal-{{usecase.usecase_id}}" class="btn btn-info">Edit</button>
                                   <a href="/generation/{{proyek.project_id}}/usecase/{{usecase.usecase_id}}/form" class="btn btn-warning">View</a>
-                                  
+                                  <a href="/generation/{{proyek.project_id}}/hapus_usecase/{{usecase.usecase_id}}" onclick="return confirm('Are you sure want to delete?')" class="btn btn-danger">Delete</a>
                                 </td>
                               </tr>
                             {% endfor %}

@@ -13,7 +13,7 @@ urlpatterns = [
 
     path('<int:project_id>/usecase', views.usecase, name='usecase'),
     path('<int:project_id>/tambah_usecase', views.tambah_usecase, name='tambah_usecase'),
-    #path('<int:id>/hapus_proyek/<int:id>', views.hapus_usecase),
+    path('<int:project_id>/hapus_usecase/<int:usecase_id>', views.hapus_usecase, name='hapus_usecase'),
     #path('<int:id>/ganti_usecase/<int:id>', views.ganti_usecase),
 
     path('<int:project_id>/usecase/<int:usecase_id>/form', views.form_tambah_usecasespec, name='form_tambah_usecasespec'),
