@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Sequence Generate &mdash; Kelompok 1</title>
-
   {% load static %}
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -119,10 +118,10 @@
                 <div class="alert alert-info">
                   <b>Normal Scenario</b>
                 </div>
-                <div class="card-body normal p-0">
+                <form method="POST" action="/generation/{{ project_id }}/{{ usecase_id }}/tambah_step" class="card-body normal p-0">
+                  {% csrf_token %}
                   <div class="table-responsive">
                     <table class="table table-striped" id="sortable-table">
-                      
                       <tbody>
                         <tr>
                           <td>
@@ -140,127 +139,389 @@
                                 <b>Object</b>
                               </div>
                             </div>
-                            
-                            <form>
-                              <div class="form-row">
-                                <div class="col-md-3 mb-3">
-                                  <a>Step 1</a>
+                            <div class="form-row iki">
+                                <div class="col-12 row input-normal">
+                                  <div class="col-md-3 mb-3">
+                                    <a>Step 1</a>
+                                  </div>
+                                  <div class="col-md-3 mb-3 d-none" >
+                                    <input type="hidden" name="is_alter_normal_1" value="0" class="form-control" placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="subject_normal_1" value="{{ steps.0.subject }}" class="form-control"  placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="activity_normal_1" value="{{ steps.0.activity }}" class="form-control" placeholder="Activity">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="object_normal_1" value="{{ steps.0.object }}" class="form-control" placeholder="Object">
+                                  </div>
                                 </div>
-                                <div class="col-md-3 mb-3">
-                                  <input type="text" class="form-control" placeholder="Subject">
+                                <div class="col-12 row input-normal">
+                                  <div class="col-md-3 mb-3">
+                                    <a>Step 2</a>
+                                  </div>
+                                  <div class="col-md-3 mb-3 d-none" >
+                                    <input type="hidden" name="is_alter_normal_2" value="0" class="form-control" placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="subject_normal_2" value="{{ steps.1.subject }}" class="form-control"  placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="activity_normal_2" value="{{ steps.1.activity }}" class="form-control" placeholder="Activity">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="object_normal_2" value="{{ steps.1.object }}" class="form-control" placeholder="Object">
+                                  </div>
                                 </div>
-                                <div class="col-md-3 mb-3">
-                                  <input type="text" class="form-control" placeholder="Activity">
+                                <div class="col-12 row input-normal">
+                                  <div class="col-md-3 mb-3">
+                                    <a>Step 3</a>
+                                  </div>
+                                  <div class="col-md-3 mb-3 d-none" >
+                                    <input type="hidden" name="is_alter_normal_3" value="0" class="form-control" placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="subject_normal_3" value="{{ steps.2.subject }}" class="form-control"  placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="activity_normal_3" value="{{ steps.2.activity }}" class="form-control" placeholder="Activity">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="object_normal_3" value="{{ steps.2.object }}" class="form-control" placeholder="Object">
+                                  </div>
                                 </div>
-                                <div class="col-md-3 mb-3">
-                                  <input type="text" class="form-control" placeholder="Object">
+                                <div class="col-12 row input-normal">
+                                  <div class="col-md-3 mb-3">
+                                    <a>Step 4</a>
+                                  </div>
+                                  <div class="col-md-3 mb-3 d-none" >
+                                    <input type="hidden" name="is_alter_normal_4" value="0" class="form-control" placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="subject_normal_4" value="{{ steps.3.subject }}" class="form-control"  placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="activity_normal_4" value="{{ steps.3.activity }}" class="form-control" placeholder="Activity">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="object_normal_4" value="{{ steps.3.object }}" class="form-control" placeholder="Object">
+                                  </div>
                                 </div>
-
-                                <div class="col-md-3 mb-3">
-                                  <a>Step 2</a>
+                                <div class="col-12 row input-normal">
+                                  <div class="col-md-3 mb-3">
+                                    <a>Step 5</a>
+                                  </div>
+                                  <div class="col-md-3 mb-3 d-none" >
+                                    <input type="hidden" name="is_alter_normal_5" value="0" class="form-control" placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="subject_normal_5" value="{{ steps.4.subject }}" class="form-control"  placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="activity_normal_5" value="{{ steps.4.activity }}" class="form-control" placeholder="Activity">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="object_normal_5" value="{{ steps.4.object }}" class="form-control" placeholder="Object">
+                                  </div>
                                 </div>
-                                <div class="col-md-3 mb-3">
-                                  <input type="text" class="form-control" placeholder="Subject">
+                                <div class="col-12 row input-normal">
+                                  <div class="col-md-3 mb-3">
+                                    <a>Step 6</a>
+                                  </div>
+                                  <div class="col-md-3 mb-3 d-none" >
+                                    <input type="hidden" name="is_alter_normal_6" value="0" class="form-control" placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="subject_normal_6" value="{{ steps.5.subject }}" class="form-control"  placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="activity_normal_6" value="{{ steps.5.activity }}" class="form-control" placeholder="Activity">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="object_normal_6" value="{{ steps.5.object }}" class="form-control" placeholder="Object">
+                                  </div>
                                 </div>
-                                <div class="col-md-3 mb-3">
-                                  <input type="text" class="form-control" placeholder="Activity">
+                                <div class="col-12 row input-normal">
+                                  <div class="col-md-3 mb-3">
+                                    <a>Step 7</a>
+                                  </div>
+                                  <div class="col-md-3 mb-3 d-none" >
+                                    <input type="hidden" name="is_alter_normal_7" value="0" class="form-control" placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="subject_normal_7" value="{{ steps.6.subject }}" class="form-control"  placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="activity_normal_7" value="{{ steps.6.activity }}" class="form-control" placeholder="Activity">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="object_normal_7" value="{{ steps.6.object }}" class="form-control" placeholder="Object">
+                                  </div>
                                 </div>
-                                <div class="col-md-3 mb-3">
-                                  <input type="text" class="form-control" placeholder="Object">
+                                <div class="col-12 row input-normal">
+                                  <div class="col-md-3 mb-3">
+                                    <a>Step 8</a>
+                                  </div>
+                                  <div class="col-md-3 mb-3 d-none" >
+                                    <input type="hidden" name="is_alter_normal_8" value="0" class="form-control" placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="subject_normal_8" value="{{ steps.7.subject }}" class="form-control"  placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="activity_normal_8" value="{{ steps.7.activity }}" class="form-control" placeholder="Activity">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="object_normal_8" value="{{ steps.7.object }}" class="form-control" placeholder="Object">
+                                  </div>
                                 </div>
-                              </div>
-                            </form>
-                            <div class="card-footer text-right">
-                              <button class="btn btn-danger normal-remove" type="reset">Remove Step</button>
-                              <button class="btn btn-primary mr-1 normal-add" type="submit">Add Step</button>
-                            </div>
+                                <div class="col-12 row input-normal">
+                                  <div class="col-md-3 mb-3">
+                                    <a>Step 9</a>
+                                  </div>
+                                  <div class="col-md-3 mb-3 d-none" >
+                                    <input type="hidden" name="is_alter_normal_9" value="0" class="form-control" placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="subject_normal_9" value="{{ steps.8.subject }}" class="form-control"  placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="activity_normal_9" value="{{ steps.8.activity }}" class="form-control" placeholder="Activity">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="object_normal_9" value="{{ steps.8.object }}" class="form-control" placeholder="Object">
+                                  </div>
+                                </div>
+                                <div class="col-12 row input-normal">
+                                  <div class="col-md-3 mb-3">
+                                    <a>Step 10</a>
+                                  </div>
+                                  <div class="col-md-3 mb-3 d-none" >
+                                    <input type="hidden" name="is_alter_normal_10" value="0" class="form-control" placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="subject_normal_10" value="{{ steps.9.subject }}" class="form-control"  placeholder="Subject">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="activity_normal_10" value="{{ steps.9.activity }}" class="form-control" placeholder="Activity">
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <input type="text" name="object_normal_10" value="{{ steps.9.object }}" class="form-control" placeholder="Object">
+                                  </div>
+                                </div>
                           </td>
                         </tr>
                       </tbody>
                     </table>
+                    <!-- <div class="card-footer text-right">
+                      <button class="btn btn-danger normal-remove">Remove Step</button>
+                      <button class="btn btn-primary mr-1 normal-add" >Add Step</button>
+                    </div> -->
                   </div>
-                </div>
+                  <div class="ticket-content">
+                    <div class="section-body">
+                      <div class="row">
+                        <div class="col-12 col-md-6 col-lg-12">
+                          <div class="card" id="card-alternative">
+                            <div class="alert alert-info">
+                              <b>Alternative Scenario</b>
+                            </div>
+                            <div class="card-body alternative p-0">
+                              <div class="table-responsive">
+                                <table class="table table-striped" id="sortable-table">
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        <div class="col-12 row input-normal">
+                                          <div class="col-md-3 mb-3">
+                                            <a>Step 1</a>
+                                          </div>
+                                          <div class="col-md-3 mb-3 d-none" >
+                                            <input type="hidden" name="is_alter_alternative_1" value="1" class="form-control" placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="subject_alternative_1" value="{{ steps2.0.subject }}" class="form-control"  placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="activity_alternative_1" value="{{ steps2.0.activity }}" class="form-control" placeholder="Activity">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="object_alternative_1" value="{{ steps2.0.object }}" class="form-control" placeholder="Object">
+                                          </div>
+                                        </div>
+                                        <div class="col-12 row input-alternative">
+                                          <div class="col-md-3 mb-3">
+                                            <a>Step 2</a>
+                                          </div>
+                                          <div class="col-md-3 mb-3 d-none" >
+                                            <input type="hidden" name="is_alter_alternative_2" value="1" class="form-control" placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="subject_alternative_2" value="{{ steps2.1.subject }}" class="form-control"  placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="activity_alternative_2" value="{{ steps2.1.activity }}" class="form-control" placeholder="Activity">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="object_alternative_2" value="{{ steps2.1.object }}" class="form-control" placeholder="Object">
+                                          </div>
+                                        </div>
+                                        <div class="col-12 row input-alternative">
+                                          <div class="col-md-3 mb-3">
+                                            <a>Step 3</a>
+                                          </div>
+                                          <div class="col-md-3 mb-3 d-none" >
+                                            <input type="hidden" name="is_alter_alternative_3" value="1" class="form-control" placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="subject_alternative_3" value="{{ steps2.2.subject }}" class="form-control"  placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="activity_alternative_3" value="{{ steps2.2.activity }}" class="form-control" placeholder="Activity">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="object_alternative_3" value="{{ steps2.2.object }}" class="form-control" placeholder="Object">
+                                          </div>
+                                        </div>
+                                        <div class="col-12 row input-alternative">
+                                          <div class="col-md-3 mb-3">
+                                            <a>Step 4</a>
+                                          </div>
+                                          <div class="col-md-3 mb-3 d-none" >
+                                            <input type="hidden" name="is_alter_alternative_4" value="1" class="form-control" placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="subject_alternative_4" value="{{ steps2.3.subject }}" class="form-control"  placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="activity_alternative_4" value="{{ steps2.3.activity }}" class="form-control" placeholder="Activity">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="object_alternative_4" value="{{ steps2.3.object }}" class="form-control" placeholder="Object">
+                                          </div>
+                                        </div>
+                                        <div class="col-12 row input-alternative">
+                                          <div class="col-md-3 mb-3">
+                                            <a>Step 5</a>
+                                          </div>
+                                          <div class="col-md-3 mb-3 d-none" >
+                                            <input type="hidden" name="is_alter_alternative_5" value="1" class="form-control" placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="subject_alternative_5" value="{{ steps2.4.subject }}" class="form-control"  placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="activity_alternative_5" value="{{ steps2.4.activity }}" class="form-control" placeholder="Activity">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="object_alternative_5" value="{{ steps2.4.object }}" class="form-control" placeholder="Object">
+                                          </div>
+                                        </div>
+                                        <div class="col-12 row input-alternative">
+                                          <div class="col-md-3 mb-3">
+                                            <a>Step 6</a>
+                                          </div>
+                                          <div class="col-md-3 mb-3 d-none" >
+                                            <input type="hidden" name="is_alter_alternative_6" value="1" class="form-control" placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="subject_alternative_6" value="{{ steps2.5.subject }}" class="form-control"  placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="activity_alternative_6" value="{{ steps2.5.activity }}" class="form-control" placeholder="Activity">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="object_alternative_6" value="{{ steps2.5.object }}" class="form-control" placeholder="Object">
+                                          </div>
+                                        </div>
+                                        <div class="col-12 row input-alternative">
+                                          <div class="col-md-3 mb-3">
+                                            <a>Step 7</a>
+                                          </div>
+                                          <div class="col-md-3 mb-3 d-none" >
+                                            <input type="hidden" name="is_alter_alternative_7" value="1" class="form-control" placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="subject_alternative_7" value="{{ steps2.6.subject }}" class="form-control"  placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="activity_alternative_7" value="{{ steps2.6.activity }}" class="form-control" placeholder="Activity">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="object_alternative_7" value="{{ steps2.6.object }}" class="form-control" placeholder="Object">
+                                          </div>
+                                        </div>
+                                        <div class="col-12 row input-alternative">
+                                          <div class="col-md-3 mb-3">
+                                            <a>Step 8</a>
+                                          </div>
+                                          <div class="col-md-3 mb-3 d-none" >
+                                            <input type="hidden" name="is_alter_alternative_8" value="1" class="form-control" placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="subject_alternative_8" value="{{ steps2.7.subject }}" class="form-control"  placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="activity_alternative_8" value="{{ steps2.7.activity }}" class="form-control" placeholder="Activity">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="object_alternative_8" value="{{ steps2.7.object }}" class="form-control" placeholder="Object">
+                                          </div>
+                                        </div>
+                                        <div class="col-12 row input-alternative">
+                                          <div class="col-md-3 mb-3">
+                                            <a>Step 9</a>
+                                          </div>
+                                          <div class="col-md-3 mb-3 d-none" >
+                                            <input type="hidden" name="is_alter_alternative_9" value="1" class="form-control" placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="subject_alternative_9" value="{{ steps2.8.subject }}" class="form-control"  placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="activity_alternative_9" value="{{ steps2.8.activity }}" class="form-control" placeholder="Activity">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="object_alternative_9" value="{{ steps2.8.object }}" class="form-control" placeholder="Object">
+                                          </div>
+                                        </div>
+                                        <div class="col-12 row input-alternative">
+                                          <div class="col-md-3 mb-3">
+                                            <a>Step 10</a>
+                                          </div>
+                                          <div class="col-md-3 mb-3 d-none" >
+                                            <input type="hidden" name="is_alter_alternative_10" value="1" class="form-control" placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="subject_alternative_10" value="{{ steps2.9.subject }}" class="form-control"  placeholder="Subject">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="activity_alternative_10" value="{{ steps2.9.activity }}" class="form-control" placeholder="Activity">
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                            <input type="text" name="object_alternative_10" value="{{ steps2.9.object }}" class="form-control" placeholder="Object">
+                                          </div>
+                                        </div>
+                                        <!-- <div class="card-footer text-right">
+                                          <button class="btn btn-danger alternative-remove" type="reset">Remove Step</button>
+                                          <button class="btn btn-primary mr-1 alternative-add" type="submit">Add Step</button>
+                                        </div> -->
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                          <button type="submit" class="btn btn-info btn-lg btn-block">SAVE</button>
+                          <button type="button" class="btn btn-primary btn-lg btn-block">GENERATE DIAGRAM</button>
+                  </div>
+                </form>
               </div>
       <!-- Alternative Scenario -->
-      <div class="ticket-content">
-        <div class="section-body">
-          <div class="row">
-            <div class="col-12 col-md-6 col-lg-12">
-              <div class="card" id="card-alternative">
-                <div class="alert alert-info">
-                  <b>Alternative Scenario</b>
-                </div>
-                <div class="card-body alternative p-0">
-                  <div class="table-responsive">
-                    <table class="table table-striped" id="sortable-table">
-                      
-                      <tbody>
-                        <tr>
-                          <td>
-                            <div class="row">
-                              <div class="col-md-3 mb-3">
-                                <b>Step</b>
-                              </div>
-                              <div class="col-md-3 mb-3">
-                                <b>Subject</b>
-                              </div>
-                              <div class="col-md-3 mb-3">
-                                <b>Activity</b>
-                              </div>
-                              <div class="col-md-3 mb-3">
-                                <b>Object</b>
-                              </div>
-                            </div>
-                            
-                            <form>
-                              <div class="form-row">
-                                <div class="col-md-3 mb-3">
-                                  <a>Step 1</a>
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                  <input type="text" class="form-control" placeholder="Subject">
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                  <input type="text" class="form-control" placeholder="Activity">
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                  <input type="text" class="form-control" placeholder="Object">
-                                </div>
 
-                                <div class="col-md-3 mb-3">
-                                  <a>Step 2</a>
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                  <input type="text" class="form-control" placeholder="Subject">
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                  <input type="text" class="form-control" placeholder="Activity">
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                  <input type="text" class="form-control" placeholder="Object">
-                                </div>
-                              </div>
-                            </form>
-                            <div class="card-footer text-right">
-                              <button class="btn btn-danger alternative-remove" type="reset">Remove Step</button>
-                              <button class="btn btn-primary mr-1 alternative-add" type="submit">Add Step</button>
-                            </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <button type="button" class="btn btn-info btn-lg btn-block">SAVE</button>
-              <button type="button" class="btn btn-primary btn-lg btn-block">GENERATE DIAGRAM</button>
       </div>
-      </div>
-
-      
-
-
-
       <footer class="main-footer">
         <div class="footer-right">
             1.0
@@ -293,20 +554,21 @@
 
   <!-- Page Specific JS File -->
   <script src="{% static 'js/page/index.js' %}"></script>
-  <!-- <script>
-    $('#card-normal').on('click','.normal-add',function(){
-      $('.normal').first().clone().appendTo($('#card-normal'));
-    })
-    $('#card-normal').on('click','.normal-remove',function(){
-      $(this).parent().parent().parent().parent().parent().parent().parent().remove();
-    })
-    $('#card-alternative').on('click','.alternative-add',function(){
-      $('.alternative').first().clone().appendTo($('#card-alternative'));
-    })
-    $('#card-alternative').on('click','.alternative-remove',function(){
-      $(this).parent().parent().parent().parent().parent().parent().parent().remove();
-    })
-  </script> -->
+  <script>
+    // $('#card-normal').on('click','.normal-add',function(){
+    //   // $('.normal').first().clone().appendTo($('#card-normal'));
+    //   $('.input-normal').first().clone().appendTo($('.iki'));
+    // })
+    // $('#card-normal').on('click','.normal-remove',function(){
+    //   $(this).parent().parent().parent().parent().parent().parent().parent().remove();
+    // })
+    // $('#card-alternative').on('click','.alternative-add',function(){
+    //   $('.alternative').first().clone().appendTo($('#card-alternative'));
+    // })
+    // $('#card-alternative').on('click','.alternative-remove',function(){
+    //   $(this).parent().parent().parent().parent().parent().parent().parent().remove();
+    // })
+  </script>
 
   <div class="modal fade" data-backdrop="false" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

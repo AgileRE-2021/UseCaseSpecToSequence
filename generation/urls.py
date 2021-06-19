@@ -17,6 +17,7 @@ urlpatterns = [
     #path('<int:id>/ganti_usecase/<int:id>', views.ganti_usecase),
 
     path('<int:project_id>/usecase/<int:usecase_id>/form', views.form_tambah_usecasespec, name='form_tambah_usecasespec'),
-    path('<int:project_id>/<int:usecase_id>/tambah_usecasespec', views.tambah_usecasespec, name='tambah_usecasespec')
+    path('<int:project_id>/<int:usecase_id>/tambah_usecasespec', views.tambah_usecasespec, name='tambah_usecasespec'),
+    path('<int:project_id>/<int:usecase_id>/tambah_step', views.form_tambah_step, name='form_tambah_step')
     
 ]
