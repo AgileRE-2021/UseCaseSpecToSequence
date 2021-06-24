@@ -19,7 +19,8 @@ from.import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
+    path('', views.splash, name='splash'),
+    path('home', views.home, name='home'),
     path('usecase', views.usecase, name='usecase'),
     path('profile', views.profile, name='profile'),
     path('form', views.form, name='form'),

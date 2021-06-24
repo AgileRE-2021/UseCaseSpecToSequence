@@ -71,20 +71,8 @@
                   <li class="crumb"><a class="text-light" href="/">List Project</a></li>
                   <li class="crumb"><a class="text-light" href="/usecase">List Usecase</a></li>
               </ol>-->
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="/">List Project</a>
-                </li>
-                <li class="breadcrumb-item" aria-current="page">
-                  List Usecase
-                  <!--<a href="/usecase">List Usecase</a>-->
-                </li>
-              </ol>
             <!--</nav>-->
           </ul>
-          
-
-
           {% comment %} <div class="search-element">
             <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
             <button class="btn" type="submit"><i class="fas fa-search"></i></button>
@@ -148,6 +136,11 @@
             </div>
           </div> {% endcomment %}
         </form>
+          <ol class="breadcrumb bg-primary text-white-all">
+              <li class="breadcrumb-item active"><a href="/">List Project</a></li>
+              <li class="breadcrumb-item active"><a href="/usecase">List Usecase</a></li>
+          </ol>
+               
         <ul class="navbar-nav navbar-right">
           
           {% comment %} <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
@@ -183,7 +176,7 @@
           <ul class="sidebar-menu">
               <li class="menu-header">Menu</li>
               <li class="nav-item">
-                <a href="/" ><i class="fas fa-fire"></i><span>List Project</span></a>
+                <a href="/" ><i class="fas fa-file-alt"></i><span>List Project</span></a>
 
               </li>
 
@@ -193,25 +186,24 @@
 
       <!-- Main Content -->
       <div class="main-content">
-      <div class="row">
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h4>List Usecase</h4>
-                    <div class="card-header-action">
-                      <form>
-                        <div class="input-group">
-                          <div class="add">
-                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class ="fas fa-plus"></i> Add Usecase</a>
-                          </div>
-                          <input type="text" class="form-control" placeholder="Search">
-                          <div class="input-group-btn">
-                            <button class="btn btn-primary"><i class="fas fa-search"></i></button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
+        <section class="section">
+          <div class="section-header">
+            <h1>List Usecase</h1>
+            <div class="section-header-breadcrumb">
+                <form>
+                <div class="input-group">
+                  <div class="add">
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class ="fas fa-plus"></i> Add Usecase</a>
                   </div>
+                  <input type="text" class="form-control" placeholder="Search">
+                  <div class="input-group-btn">
+                    <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                  </div>
+                </div>
+              </form>
+            </div>
+           
+          </div>
                   <div class="card-body p-0">
                     <div class="table-responsive">
                       <table class="table table-striped" id="sortable-table">

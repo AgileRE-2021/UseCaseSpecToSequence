@@ -30,7 +30,7 @@
   </style>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Sequence Generate &mdash; Kelompok 1</title>
+  <title>SEGA &mdash; Kelompok 1</title>
 
   {% load static %}
   <!-- General CSS Files -->
@@ -58,29 +58,25 @@
           <ul class="navbar-nav mr-3">
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
             <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
-            <!--<nav class="crumbs">
-              <ol>
-                  <li class="crumb"><a class="text-light" href="/">List Project</a></li>
-                  <li class="crumb"><a class="text-light" href="/usecase">List Usecase</a></li>
-                  <li class="crumb"><a class="text-light" href="/form">Form</a></li>
-              </ol>
-            </nav>-->
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="/">List Project</a>
-              </li>
-              <li class="breadcrumb-item">
-                <a href="/usecase">List Usecase</a>
-                <!--<a href="/usecase">List Usecase</a>-->
-              <li class="breadcrumb-item"></li>
-                <a href="/form">Form</a>
-              </li>
-              <li class="breadcrumb-item" aria-current="page">
-                Generate
-              </li>
-            </ol>
+             <!--<nav class="crumbs">-->
+              <nav aria-label="breadcrumb">
+            
+                <ol class="breadcrumb bg-primary text-white-all">
+                  <li class="breadcrumb-item"> 
+                  </li>
+                </ol> 
+                
+              </nav>       
+              <!--</nav>-->
+            
           </ul>
         </form>
+        <ol class="breadcrumb bg-primary text-white-all">
+          <li class="breadcrumb-item active"><a href="/">List Project</a></li>
+          <li class="breadcrumb-item active"><a href="/usecase">List Usecase</a></li>
+          <li class="breadcrumb-item active"><a href="/form">Form</a></li>
+          <li class="breadcrumb-item active"><a href="/generate">Generate</a></li>
+      </ol>
         <ul class="navbar-nav navbar-right">
 
           {% comment %} <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
@@ -91,16 +87,16 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="/">Sequence Generate</a>
+            <a href="/"><img src="{% static 'img/LOGO1.png' %}" alt="logo" /></a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="/">SDG</a>
+            <a href="/">SEGA</a>
           </div>
           <ul class="sidebar-menu">
               <li class="menu-header">Menu</li>
-              <li class="nav-item">
-                <a href="/" ><i class="fas fa-fire"></i><span>List Project</span></a>
-
+              <li class="nav-item active">
+                <a href="/" class="nav-link"><i class="fas fa-file-alt"></i><span>List Project</span></a>
+                
               </li>
 
               </li>
