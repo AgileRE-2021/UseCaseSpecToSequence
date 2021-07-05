@@ -10,6 +10,11 @@ from django.views.generic.edit import UpdateView
 
 # def lookup(d, key):
 #     return d[key]
+def splash(request):
+    return render(request, 'splash.html')
+
+def generate(request):
+    return render(request, 'generate.html')
 
 def home(request):   
     tasks = Project.objects.all()
@@ -25,11 +30,11 @@ def tambah_proyek(request):
             print(form)
             try:  
                 form.save()  
-                return redirect('/generation')  
+                return redirect('/generation/home')  
             except:  
-                return redirect('/generation') 
+                return redirect('/generation/home') 
         else:
-            return redirect('/generation') 
+            return redirect('/generation/home') 
     else:  
         form = ProjectForm()  
     return render(request,'index.html',{'form':form})
@@ -37,14 +42,14 @@ def tambah_proyek(request):
 def hapus_proyek(request, id):  
     proyek = Project.objects.get(project_id=id)  
     proyek.delete()  
-    return redirect('/generation')  
+    return redirect('/generation/home')  
 
 def ganti_proyek(request, id):  
     proyek = Project.objects.get(project_id=id)  
     form = ProjectForm(request.POST, instance = proyek)  
     if form.is_valid():  
         form.save()  
-        return redirect('/generation')  
+        return redirect('/generation/home')  
     return render(request, 'index.html', {'proyek': proyek})
 
 def usecase(request, project_id):
@@ -66,10 +71,10 @@ def tambah_usecase(request, project_id):
             formulir = form.save(commit=False)
             formulir.project = proyek
             formulir.save()
-            return redirect('/generation/'+str(project_id)+'/usecase')
+            return redirect('/generation/home/'+str(project_id)+'/usecase')
         else:
             print(form.errors)
-            return redirect('/generation/'+str(project_id)+'/usecase')
+            return redirect('/generation/home/'+str(project_id)+'/usecase')
     else:
         form = UsecaseForm()
     return render(request,'list usecase.html', {'form': form})
@@ -120,7 +125,7 @@ def form_tambah_step(request,project_id,usecase_id):
             activity=request.POST.get("activity_alternative_"+str(i+1)),object=request.POST.get("object_alternative_"+str(i+1)),spec_id=usecase_id)
             p.save()
 
-    return redirect('/generation/'+str(project_id)+'/usecase/'+str(usecase_id)+'/form')  
+    return redirect('/generation/home/'+str(project_id)+'/usecase/'+str(usecase_id)+'/form')  
 
 
 def tambah_usecasespec(request,project_id,usecase_id):
@@ -128,14 +133,14 @@ def tambah_usecasespec(request,project_id,usecase_id):
     form = UsecasespecForm(request.POST, instance = proyek)  
     if form.is_valid():  
         form.save()  
-        return redirect('/generation/'+str(project_id)+'/usecase/'+str(usecase_id)+'/form')  
+        return redirect('/generation/home/'+str(project_id)+'/usecase/'+str(usecase_id)+'/form')  
 
     return render(request,'form.html')
 
 def hapus_usecase(request,project_id,usecase_id):  
     usecase = Usecase.objects.get(usecase_id=usecase_id)  
     usecase.delete()  
-    return redirect('/generation/'+str(project_id)+'/usecase')  
+    return redirect('/generation/home/'+str(project_id)+'/usecase')  
 
 def profile(request):   
     return render(request,'profile usecase.html')

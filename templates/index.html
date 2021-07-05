@@ -5,13 +5,43 @@
     .add {
       padding-right: 5%;
       margin-right: 3;
+    }    
+    .nav {
+    border-bottom: 1px solid black;
     }
+
+    .crumbs ol {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .crumb {
+        display: inline-block;
+    }
+
+    .crumb a::after {
+        display: inline-block;
+        color: #000;
+        content: '>';
+        font-size: 80%;
+        font-weight: bold;
+        padding: 0 3px;
+    }
+
+    .breadcrumb-item+.breadcrumb-item::before {
+        display: inline-block;
+        padding-right: .5rem;
+        color: #6c757d;
+        content: "/";
+    }
+    
   </style>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Sequence Generate &mdash; Kelompok 1</title>
+  <title>SEGA &mdash; Kelompok 1</title>
 
   {% load static %}
+  <link rel="shortcut icon" href="{% static 'img/SEGA_ICON_WEB.png' %}">
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -31,17 +61,28 @@
 <body>
   <div id="app">
     <div class="main-wrapper">
-      <div class="navbar-bg"></div>
+      <div class="navbar-bg">
+      </div>
       <nav class="navbar navbar-expand-lg main-navbar">
         <form class="form-inline mr-auto">
           <ul class="navbar-nav mr-3">
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
             <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+            <!--<nav class="crumbs">
+              <ol>
+                  <li class="crumb"><a class="text-light" href="/">List Project</a></li>
+                  <li class="crumb"><a class="text-light" href="/usecase">List Usecase</a></li>
+              </ol>-->
+            <!--</nav>-->
           </ul>
           
         </form>
-        <ul class="navbar-nav navbar-right">
+        <ol class="breadcrumb bg-primary text-white-all">
+          <li class="breadcrumb-item active"><a href="#">List Project</a></li>
+          <li class="breadcrumb-item active"><a href="#"></a></li>
+      </ol>
 
+      <ul class="navbar-nav navbar-right">
 
           {% comment %} <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <img alt="image" src="{% static 'img/avatar/avatar-1.png' %}" class="rounded-circle mr-1">
@@ -68,15 +109,15 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="/">Sequence Generate</a>
+            <a href="/generation/home"><img src="{% static 'img/LOGO1.png' %}" alt="logo" /></a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="/">SDG</a>
+            <a href="/generation/home">SEGA</a>
           </div>
           <ul class="sidebar-menu">
               <li class="menu-header">Menu</li>
               <li class="nav-item active">
-                <a href="/generation" ><i class="fas fa-fire"></i><span>List Project</span></a>
+                <a href="/generation/home" ><i class="fas fa-file-alt"></i><span>List Project</span></a>
 
               </li>
 
@@ -226,16 +267,14 @@
 
       <!-- Main Content -->
       <div class="main-content">
-      <div class="row">
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h4>List Project</h4>
-                    <div class="card-header-action ">
+        <section class="section">
+          <div class="section-header">
+            <h1>List Project</h1>
+            <div class="section-header-breadcrumb">
                       <form>
                         <div class="input-group">
                           <div class="add">
-                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Project</a>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class ="fas fa-plus"></i> Add Project</a>
                           </div>
                           <input type="text" class="form-control" placeholder="Search">
                           <div class="input-group-btn">
@@ -245,6 +284,9 @@
                       </form>
                     </div>
                   </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="card">
                   <div class="card-body p-0">
                     <div class="table-responsive">
                       <table class="table table-striped" id="sortable-table">
@@ -266,9 +308,9 @@
                                 <td>{{ proyek.project_name }}</td>
                                 <td>{{ proyek.project_desc }}</td>
                                 <td>
-                                  <button type="button" data-toggle="modal" data-target="#modal-{{proyek.project_id}}" class="btn btn-info">Edit</button> 
-                                  <a href="/generation/{{proyek.project_id}}/usecase" class="btn btn-warning">View</a>
-                                  <a href="/generation/hapus_proyek/{{proyek.project_id}}" onclick="return confirm('Are you sure want to delete?')" class="btn btn-danger">Delete</a>
+                                  <button type="button" data-toggle="modal" data-target="#modal-{{proyek.project_id}}" class="btn btn-info"><i class="fas fa-pencil-alt"></i> Edit</button> 
+                                  <a href="/generation/home/{{proyek.project_id}}/usecase" class="btn btn-warning"><i class ="fas fa-eye"></i> View</a>
+                                  <a href="/generation/home/hapus_proyek/{{proyek.project_id}}" onclick="return confirm('Are you sure want to delete?')" class="btn btn-danger"><i class ="fas fa-trash"></i> Delete</a>
                                 </td>
                             </tr>
                             <!-- Modal Edit -->
