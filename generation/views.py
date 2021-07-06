@@ -13,9 +13,6 @@ from django.views.generic.edit import UpdateView
 def splash(request):
     return render(request, 'splash.html')
 
-def generate(request):
-    return render(request, 'generate.html')
-
 def home(request):   
     tasks = Project.objects.all()
     context = {
@@ -140,7 +137,10 @@ def tambah_usecasespec(request,project_id,usecase_id):
 def hapus_usecase(request,project_id,usecase_id):  
     usecase = Usecase.objects.get(usecase_id=usecase_id)  
     usecase.delete()  
-    return redirect('/generation/home/'+str(project_id)+'/usecase')  
+    return redirect('/generation/home/'+str(project_id)+'/usecase')
+
+def generate(request, project_id, usecase_id):
+    return render(request, 'generate.html')
 
 def profile(request):   
     return render(request,'profile usecase.html')

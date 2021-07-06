@@ -94,9 +94,9 @@ def translasi(usecase_id):
     #    translasi_steps.append("end")
 
     # Menghilangkan angka dalam list translasi_steps
-    for i in translasi_steps:
-        if isinstance(i, int):
-            del translasi_steps[i]
+    #for i in translasi_steps:
+    #    if isinstance(i, int):
+    #        del translasi_steps[i]
 
     # Pengurutan hasil translasi
     hasil_translasi.extend(translasi_steps)

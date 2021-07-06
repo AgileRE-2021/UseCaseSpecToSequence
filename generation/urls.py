@@ -21,6 +21,6 @@ urlpatterns = [
     path('home/<int:project_id>/<int:usecase_id>/tambah_usecasespec', views.tambah_usecasespec, name='tambah_usecasespec'),
     path('home/<int:project_id>/<int:usecase_id>/tambah_step', views.form_tambah_step, name='form_tambah_step'),
 
-    path('home/generate', views.generate, name='generate')
+    path('home/<int:project_id>/usecase/<int:usecase_id>/generate', views.generate, name='generate')
     
 ]
