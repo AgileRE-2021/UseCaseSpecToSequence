@@ -120,12 +120,9 @@
           <div class="row">
             <div class="col-12 col-md-6 col-lg-12"> 
               <form class="card">
-                <div class="card-body">
-                  <div class="form-group">
-                    <label>UMLScript</label>
-                    <input name="result" style="height:600px" type="text" class="form-control">
-                  </div>
-              </form>
+                <div class="card-body" id="umlscript" data-umlscript="{{ hasil_translasi }}">
+                  <div>@startuml</div>
+                </div>
       </div>
 
       <footer class="main-footer">
@@ -188,4 +185,19 @@
     </div>
   </div>
 </body>
+<script>
+  umlscript = document.getElementById('umlscript');
+  umlscriptValue = umlscript.dataset.umlscript.split(',');
+  umlscriptValue = umlscriptValue.slice(1,umlscriptValue.length-1);
+  clonedDiv = umlscript.children[0];
+  console.log(clonedDiv);
+  for (i=0; i<umlscriptValue.length; i++){
+    var c = clonedDiv.cloneNode(true);
+    c.innerText = umlscriptValue[i].slice(2,umlscriptValue[i].length-1);
+    umlscript.appendChild(c);
+  }
+  var c = clonedDiv.cloneNode(true);
+    c.innerText = '@enduml';
+    umlscript.appendChild(c);
+</script>
 </html>
