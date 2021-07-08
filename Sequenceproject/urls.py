@@ -14,16 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from.import views
+from django.urls import include, path
 
 urlpatterns = [
+	path('generation/', include('generation.urls')),
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('', views.splash, name='splash'),
     path('home', views.home, name='home'),
     path('usecase', views.usecase, name='usecase'),
     path('profile', views.profile, name='profile'),
     path('form', views.form, name='form'),
     path('generate', views.generate, name='generate')
+=======
+>>>>>>> backend-usecase
 ]
 

@@ -5,7 +5,11 @@
     .add {
       padding-right: 5%;
       margin-right: 3;
+<<<<<<< HEAD
     }
+=======
+    }    
+>>>>>>> backend-usecase
     .nav {
     border-bottom: 1px solid black;
     }
@@ -27,14 +31,28 @@
         font-weight: bold;
         padding: 0 3px;
     }
+<<<<<<< HEAD
+=======
+
+    .breadcrumb-item+.breadcrumb-item::before {
+        display: inline-block;
+        padding-right: .5rem;
+        color: #6c757d;
+        content: "/";
+    }
+>>>>>>> backend-usecase
     
   </style>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>SEGA &mdash; Kelompok 1</title>
+<<<<<<< HEAD
   <a href="/">
+=======
+>>>>>>> backend-usecase
 
   {% load static %}
+  <link rel="shortcut icon" href="{% static 'img/SEGA_ICON_WEB.png' %}">
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -62,6 +80,7 @@
           <ul class="navbar-nav mr-3">
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
             <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+<<<<<<< HEAD
             <!--<nav class="crumbs">-->
             <nav aria-label="breadcrumb">
             
@@ -71,14 +90,31 @@
               </ol> 
               
             </nav>       
+=======
+            <!--<nav class="crumbs">
+              <ol>
+                  <li class="crumb"><a class="text-light" href="/">List Project</a></li>
+                  <li class="crumb"><a class="text-light" href="/usecase">List Usecase</a></li>
+              </ol>-->
+>>>>>>> backend-usecase
             <!--</nav>-->
           </ul>
         </form>
+<<<<<<< HEAD
           <ol class="breadcrumb bg-primary text-white-all">
               <li class="breadcrumb-item active"><a href="/">List Project</a></li>
               <li class="breadcrumb-item active"><a href="/#"></a></li>
           </ol>
                
+=======
+        <ol class="breadcrumb bg-primary text-white-all">
+          <li class="breadcrumb-item active"><a href="#">List Project</a></li>
+          <li class="breadcrumb-item active"><a href="#"></a></li>
+      </ol>
+
+      <ul class="navbar-nav navbar-right">
+
+>>>>>>> backend-usecase
           {% comment %} <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <img alt="image" src="{% static 'img/avatar/avatar-1.png' %}" class="rounded-circle mr-1">
             <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
@@ -104,6 +140,7 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
+<<<<<<< HEAD
             <a href="/"><img src="{% static 'img/LOGO1.png' %}" alt="logo" /></a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
@@ -114,6 +151,95 @@
               <li class="nav-item active ">
                 <a href="#" class="nav-link"><i class="fas fa-file-alt"></i><span>List Project</span></a>
                 
+=======
+            <a href="/generation/home"><img src="{% static 'img/LOGO1.png' %}" alt="logo" /></a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="/generation/home">SEGA</a>
+          </div>
+          <ul class="sidebar-menu">
+              <li class="menu-header">Menu</li>
+              <li class="nav-item active">
+                <a href="/generation/home" ><i class="fas fa-file-alt"></i><span>List Project</span></a>
+
+              </li>
+
+              {% comment %} </li>
+              <li class="menu-header">Starter</li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>
+                  <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
+                  <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
+                </ul>
+              </li> {% endcomment %}
+              {% comment %} <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" href="bootstrap-alert.html">Alert</a></li>
+                  <li><a class="nav-link" href="bootstrap-badge.html">Badge</a></li>
+                  <li><a class="nav-link" href="bootstrap-breadcrumb.html">Breadcrumb</a></li>
+                  <li><a class="nav-link" href="bootstrap-buttons.html">Buttons</a></li>
+                  <li><a class="nav-link" href="bootstrap-card.html">Card</a></li>
+                  <li><a class="nav-link" href="bootstrap-carousel.html">Carousel</a></li>
+                  <li><a class="nav-link" href="bootstrap-collapse.html">Collapse</a></li>
+                  <li><a class="nav-link" href="bootstrap-dropdown.html">Dropdown</a></li>
+                  <li><a class="nav-link" href="bootstrap-form.html">Form</a></li>
+                  <li><a class="nav-link" href="bootstrap-list-group.html">List Group</a></li>
+                  <li><a class="nav-link" href="bootstrap-media-object.html">Media Object</a></li>
+                  <li><a class="nav-link" href="bootstrap-modal.html">Modal</a></li>
+                  <li><a class="nav-link" href="bootstrap-nav.html">Nav</a></li>
+                  <li><a class="nav-link" href="bootstrap-navbar.html">Navbar</a></li>
+                  <li><a class="nav-link" href="bootstrap-pagination.html">Pagination</a></li>
+                  <li><a class="nav-link" href="bootstrap-popover.html">Popover</a></li>
+                  <li><a class="nav-link" href="bootstrap-progress.html">Progress</a></li>
+                  <li><a class="nav-link" href="bootstrap-table.html">Table</a></li>
+                  <li><a class="nav-link" href="bootstrap-tooltip.html">Tooltip</a></li>
+                  <li><a class="nav-link" href="bootstrap-typography.html">Typography</a></li>
+                </ul>
+              </li>
+              <li class="menu-header">Stisla</li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Components</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" href="components-article.html">Article</a></li>
+                  <li><a class="nav-link beep beep-sidebar" href="components-avatar.html">Avatar</a></li>
+                  <li><a class="nav-link" href="components-chat-box.html">Chat Box</a></li>
+                  <li><a class="nav-link beep beep-sidebar" href="components-empty-state.html">Empty State</a></li>
+                  <li><a class="nav-link" href="components-gallery.html">Gallery</a></li>
+                  <li><a class="nav-link beep beep-sidebar" href="components-hero.html">Hero</a></li>
+                  <li><a class="nav-link" href="components-multiple-upload.html">Multiple Upload</a></li>
+                  <li><a class="nav-link beep beep-sidebar" href="components-pricing.html">Pricing</a></li>
+                  <li><a class="nav-link" href="components-statistic.html">Statistic</a></li>
+                  <li><a class="nav-link" href="components-tab.html">Tab</a></li>
+                  <li><a class="nav-link" href="components-table.html">Table</a></li>
+                  <li><a class="nav-link" href="components-user.html">User</a></li>
+                  <li><a class="nav-link beep beep-sidebar" href="components-wizard.html">Wizard</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Forms</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" href="forms-advanced-form.html">Advanced Form</a></li>
+                  <li><a class="nav-link" href="forms-editor.html">Editor</a></li>
+                  <li><a class="nav-link" href="forms-validation.html">Validation</a></li>
+                </ul>
+              </li> {% endcomment %}
+              {% comment %} <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="gmaps-advanced-route.html">Advanced Route</a></li>
+                  <li><a href="gmaps-draggable-marker.html">Draggable Marker</a></li>
+                  <li><a href="gmaps-geocoding.html">Geocoding</a></li>
+                  <li><a href="gmaps-geolocation.html">Geolocation</a></li>
+                  <li><a href="gmaps-marker.html">Marker</a></li>
+                  <li><a href="gmaps-multiple-marker.html">Multiple Marker</a></li>
+                  <li><a href="gmaps-route.html">Route</a></li>
+                  <li><a href="gmaps-simple.html">Simple</a></li>
+                </ul>
+>>>>>>> backend-usecase
               </li>
               
             </ul>
@@ -127,6 +253,7 @@
       </div>
 
       <!-- Main Content -->
+<<<<<<< HEAD
         <div class="main-content">
           <section class="section">
             <div class="section-header">
@@ -153,6 +280,29 @@
       <div class="row">
               <div class="col-12">
                 <div class="card">
+=======
+      <div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1>List Project</h1>
+            <div class="section-header-breadcrumb">
+                      <form>
+                        <div class="input-group">
+                          <div class="add">
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class ="fas fa-plus"></i> Add Project</a>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Search">
+                          <div class="input-group-btn">
+                            <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="card">
+>>>>>>> backend-usecase
                   <div class="card-body p-0">
                     <div class="table-responsive">
                       <table class="table table-striped" id="sortable-table">
@@ -161,17 +311,58 @@
                             <th class="sort-handler">
                               <i class="fas fa-th"></i>
                             </th>
-                            <th>No</th>
-                            <th>Name Project</th>
+                            <th>Project Name</th>
+                            <th>Description</th>
                             <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>
-                              <div class="sort-handler">
-                                <i class="fas fa-th"></i>
+                          {% if tasks %}
+                            {% for proyek in tasks %}
+                            <tr>
+                                <td>{{ proyek.project_id }}</td>
+                                <td>{{ proyek.project_name }}</td>
+                                <td>{{ proyek.project_desc }}</td>
+                                <td>
+                                  <button type="button" data-toggle="modal" data-target="#modal-{{proyek.project_id}}" class="btn btn-info"><i class="fas fa-pencil-alt"></i> Edit</button> 
+                                  <a href="/generation/home/{{proyek.project_id}}/usecase" class="btn btn-warning"><i class ="fas fa-eye"></i> View</a>
+                                  <a href="/generation/hapus_proyek/{{proyek.project_id}}" onclick="return confirm('Are you sure want to delete?')" class="btn btn-danger"><i class ="fas fa-trash"></i> Delete</a>
+                                </td>
+                            </tr>
+                            <!-- Modal Edit -->
+                            <div class="modal fade" data-backdrop="false" id="modal-{{proyek.project_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Edit Project</h5>
+                                    <button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                          
+                                    <form method="post" action="/generation/ganti_proyek/{{proyek.project_id}}">
+                                      {% csrf_token %}
+                                      <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Project Name:</label>
+                                        <input required name="project_name" value="{{proyek.project_name}}" type="text" class="form-control" id="recipient-name">{{ form.project_name }}
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Description:</label>
+                                      {% csrf_token %}
+                                      {% csrf_token %}
+                                        <input required name="project_desc" value="{{proyek.project_desc}}" style="height:100px" type="text" class="form-control" id="recipient-name">{{ form.project_desc }}
+                                      </div>
+                          
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" value="" class="btn btn-primary">Save</button>
+                                  </div>
+                                    </form>
+                                </div>
                               </div>
+<<<<<<< HEAD
                             </td>
                             <td>Project A</td>
                             <td class="align-middle">
@@ -230,7 +421,15 @@
                               <a href="/usecase" class="btn btn-warning"><i class ="fas fa-eye"></i> View</a>
                               <a href="#" class="btn btn-danger"><i class ="fas fa-trash"></i> Delete</a>
                             </td>
+=======
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                          <tr>
+                            <td colspan="5">Project is not found.</td>
+>>>>>>> backend-usecase
                           </tr>
+                        {% endif %}
                         </tbody>
                       </table>
                     </div>
@@ -283,11 +482,15 @@
         </div>
         <div class="modal-body">
 
-          <form method="post" action="/tambah_proyek">
+          <form method="post" action="/generation/tambah_proyek">
             {% csrf_token %}
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Name Project:</label>
-              <input required name="nama_proyek" type="text" class="form-control" id="recipient-name">{{ form.nama_proyek }}
+              <label for="recipient-name" class="col-form-label">Project Name:</label>
+              <input required name="project_name" type="text" class="form-control" id="recipient-name">{{ form.project_name }}
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Description:</label>
+              <input required name="project_desc" type="text" style="height:100px" class="form-control" id="recipient-name">{{ form.project_desc }}
             </div>
 
         </div>

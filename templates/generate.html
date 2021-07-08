@@ -33,6 +33,10 @@
   <title>SEGA &mdash; Kelompok 1</title>
 
   {% load static %}
+<<<<<<< HEAD
+=======
+  <link rel="shortcut icon" href="{% static 'img/SEGA_ICON_WEB.png' %}">
+>>>>>>> backend-usecase
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -72,10 +76,17 @@
           </ul>
         </form>
         <ol class="breadcrumb bg-primary text-white-all">
+<<<<<<< HEAD
           <li class="breadcrumb-item active"><a href="/">List Project</a></li>
           <li class="breadcrumb-item active"><a href="/usecase">List Usecase</a></li>
           <li class="breadcrumb-item active"><a href="/form">Form</a></li>
           <li class="breadcrumb-item active"><a href="/generate">Generate</a></li>
+=======
+          <li class="breadcrumb-item active"><a href="/generation/home">List Project</a></li>
+          <li class="breadcrumb-item active"><a href="#">List Usecase</a></li>
+          <li class="breadcrumb-item active"><a href="#">Form</a></li>
+          <li class="breadcrumb-item active"><a href="#">Generate</a></li>
+>>>>>>> backend-usecase
       </ol>
         <ul class="navbar-nav navbar-right">
 
@@ -87,6 +98,7 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
+<<<<<<< HEAD
             <a href="/"><img src="{% static 'img/LOGO1.png' %}" alt="logo" /></a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
@@ -96,6 +108,17 @@
               <li class="menu-header">Menu</li>
               <li class="nav-item active">
                 <a href="/" class="nav-link"><i class="fas fa-file-alt"></i><span>List Project</span></a>
+=======
+            <a href="/generation/home"><img src="{% static 'img/LOGO1.png' %}" alt="logo" /></a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="/generation/home">SEGA</a>
+          </div>
+          <ul class="sidebar-menu">
+              <li class="menu-header">Menu</li>
+              <li class="nav-item">
+                <a href="/generation/home" ><i class="fas fa-file-alt"></i><span>List Project</span></a>
+>>>>>>> backend-usecase
                 
               </li>
 
@@ -106,6 +129,7 @@
 
       <!-- Main Content -->
       <div class="main-content">
+<<<<<<< HEAD
         <div class="section-body">
           <div class="row">
             <div class="col-12 col-md-6 col-lg-12">
@@ -126,6 +150,24 @@
                   <button class="btn btn-primary mr-1" type="submit"><i class ="fas fa-upload"></i> Submit</button>
                 </div>-->
               </div>
+=======
+        <section class="section">
+          <div class="section-header">
+            <h1>Result</h1>
+            <div class="section-header-breadcrumb">
+            </div>
+          </div>
+
+      <div class="section-body">
+        <h2 class="section-title">Result from Generating Usecase Specification to Sequence Diagram</h2>
+        <p class="section-lead">Please copy and paste this code to https://plantuml.com/</p>
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-12"> 
+              <form class="card">
+                <div class="card-body" id="umlscript" data-umlscript="{{ hasil_translasi }}">
+                  <div>@startuml</div>
+                </div>
+>>>>>>> backend-usecase
       </div>
 
       <footer class="main-footer">
@@ -188,4 +230,22 @@
     </div>
   </div>
 </body>
+<<<<<<< HEAD
+=======
+<script>
+  umlscript = document.getElementById('umlscript');
+  umlscriptValue = umlscript.dataset.umlscript.split(',');
+  umlscriptValue = umlscriptValue.slice(1,umlscriptValue.length-1);
+  clonedDiv = umlscript.children[0];
+  console.log(clonedDiv);
+  for (i=0; i<umlscriptValue.length; i++){
+    var c = clonedDiv.cloneNode(true);
+    c.innerText = umlscriptValue[i].slice(2,umlscriptValue[i].length-1);
+    umlscript.appendChild(c);
+  }
+  var c = clonedDiv.cloneNode(true);
+    c.innerText = '@enduml';
+    umlscript.appendChild(c);
+</script>
+>>>>>>> backend-usecase
 </html>

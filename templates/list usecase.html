@@ -38,9 +38,10 @@
   </style>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Sequence Generate &mdash; Kelompok 1</title>
+  <title>SEGA &mdash; Kelompok 1</title>
 
   {% load static %}
+  <link rel="shortcut icon" href="{% static 'img/SEGA_ICON_WEB.png' %}">
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -136,11 +137,19 @@
             </div>
           </div> {% endcomment %}
         </form>
+<<<<<<< HEAD
           <ol class="breadcrumb bg-primary text-white-all">
               <li class="breadcrumb-item active"><a href="/">List Project</a></li>
               <li class="breadcrumb-item active"><a href="/usecase">List Usecase</a></li>
           </ol>
                
+=======
+        <ol class="breadcrumb bg-primary text-white-all">
+          <li class="breadcrumb-item active"><a href="/generation/home">List Project</a></li>
+          <li class="breadcrumb-item active"><a href="#">List Usecase</a></li>
+      </ol>
+           
+>>>>>>> backend-usecase
         <ul class="navbar-nav navbar-right">
           
           {% comment %} <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
@@ -168,15 +177,26 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
+<<<<<<< HEAD
             <a href="/"><img src="{% static 'img/LOGO1.png' %}" alt="logo" /></a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
             <a href="/">SEGA</a>
+=======
+            <a href="/generation/home"><img src="{% static 'img/LOGO1.png' %}" alt="logo" /></a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="/generation/home">SEGA</a>
+>>>>>>> backend-usecase
           </div>
           <ul class="sidebar-menu">
               <li class="menu-header">Menu</li>
               <li class="nav-item">
+<<<<<<< HEAD
                 <a href="/" ><i class="fas fa-file-alt"></i><span>List Project</span></a>
+=======
+                <a href="/generation/home" ><i class="fas fa-file-alt"></i><span>List Project</span></a>
+>>>>>>> backend-usecase
 
               </li>
 
@@ -190,6 +210,7 @@
           <div class="section-header">
             <h1>List Usecase</h1>
             <div class="section-header-breadcrumb">
+<<<<<<< HEAD
                 <form>
                 <div class="input-group">
                   <div class="add">
@@ -204,6 +225,24 @@
             </div>
            
           </div>
+=======
+                      <form>
+                        <div class="input-group">
+                          <div class="add">
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class ="fas fa-plus"></i> Add Usecase</a>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Search">
+                          <div class="input-group-btn">
+                            <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="card">
+>>>>>>> backend-usecase
                   <div class="card-body p-0">
                     <div class="table-responsive">
                       <table class="table table-striped" id="sortable-table">
@@ -212,12 +251,12 @@
                             <th class="sort-handler">
                               <i class="fas fa-th"></i>
                             </th>
-                            <th>No</th>
-                            <th>Name Usecase</th>
+                            <th>Usecase Name</th>
                             <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
+<<<<<<< HEAD
                           <tr>
                             <td>
                               <div class="sort-handler">
@@ -282,6 +321,24 @@
                               <a href="#" class="btn btn-danger"><i class ="fas fa-trash"></i> Delete</a>
                             </td>
                           </tr>
+=======
+                          {% if tasks %}
+                            {% for usecase in tasks %}
+                              <tr>
+                                <td>{{ usecase.usecase_id }}</td>
+                                <td>{{ usecase.usecase_name }}</td>
+                                <td>
+                                  <a href="/generation/home/{{proyek.project_id}}/usecase/{{usecase.usecase_id}}/form" class="btn btn-warning"><i class ="fas fa-eye"></i> View</a>
+                                  <a href="/generation/home/{{proyek.project_id}}/hapus_usecase/{{usecase.usecase_id}}" onclick="return confirm('Are you sure want to delete?')" class="btn btn-danger"><i class ="fas fa-trash"></i> Delete</a>
+                                </td>
+                              </tr>
+                            {% endfor %}
+                          {% else %}
+                            <tr>
+                              <td colspan="5">Usecase is not found.</td>
+                            </tr>
+                          {% endif %}
+>>>>>>> backend-usecase
                         </tbody>
                       </table>
                     </div>
@@ -334,11 +391,12 @@
         </div>
         <div class="modal-body">
 
-          <form method="post" action="/tambah_proyek">
+          <form enctype="multipart/form-data" method="post" action="/generation/home/{{proyek.project_id}}/tambah_usecase">
             {% csrf_token %}
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Name Usecase:</label>
-              <input required name="nama_proyek" type="text" class="form-control" id="recipient-name">{{ form.nama_proyek }}
+              <input name="project" type="hidden" value="{{form.project}}">
+              <label for="recipient-name" class="col-form-label">Usecase Name:</label>
+              <input required name="usecase_name" type="text" class="form-control" id="recipient-name">{{ form.usecase_name }}
             </div>
 
         </div>
