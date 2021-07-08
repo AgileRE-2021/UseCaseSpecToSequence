@@ -34,12 +34,15 @@ SEGA (Sequence Diagram Generation) merupakan proyek Django berbasis website yang
    ```sh
    cd .../<folder Django>/<folder proyek>
    ```
-4. Lakukan migrasi untuk database.
+4. Jalankan perintah-perintah di bawah ini.
    ```sh
-   python manage.py makemigrations
+   git fetch --all
    ```
    ```sh
-   python manage.py migrate
+   git checkout -b backend-usecase
+   ```
+   ```sh
+   git pull
    ```
 5. Jalankan server.
    ```sh
