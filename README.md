@@ -1,3 +1,12 @@
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/AgileRE-2021/UseCaseSpecToSequence">
+    <img src="https://user-images.githubusercontent.com/61226035/125086165-8d781a80-e0f5-11eb-8e41-2e74d6632a24.PNG" alt="Logo" width="1000" height="500">
+  </a>
+
+</p>
+
 # SEGA (Sequence Diagram Generation) 1.0
 > Generate dari Use Case Specification ke Sequence Diagram dengan Model Robustness
 
@@ -94,3 +103,8 @@ SEGA (Sequence Diagram Generation) merupakan proyek Django berbasis website yang
 
 # Lisensi
 Copyright © 2021 S1 Sistem Informasi Universitas Airlangga
+
+
+<h2 align="center"> -------S1 Sistem Informasi - Universitas Airlangga - 2021------- </h2>
+<br/>
+
