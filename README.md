@@ -41,23 +41,13 @@ SEGA (Sequence Diagram Generation) merupakan proyek Django berbasis website yang
    ```
 3. Pindah ke folder proyek.
    ```sh
-   cd .../<folder Django>/<folder proyek>
+   cd .../<folder Django>/UseCaseSpecToSequence
    ```
-4. Jalankan perintah-perintah di bawah ini.
-   ```sh
-   git fetch --all
-   ```
-   ```sh
-   git checkout -b backend-usecase
-   ```
-   ```sh
-   git pull
-   ```
-5. Jalankan server.
+4. Jalankan server.
    ```sh
    python manage.py runserver
    ```
-6. Buka browser, lalu masukkan alamat
+5. Buka browser, lalu masukkan alamat
    ```sh
    https://localhost:8000/generation
    ```
@@ -79,7 +69,7 @@ SEGA (Sequence Diagram Generation) merupakan proyek Django berbasis website yang
 10. Klik tombol Submit untuk menghasilkan diagram sequence-nya.
 
 # Informasi Lainnya
-### Anggota Kelompok 1 (kelas I2)
+### Anggota Proyek
 1. Naufal Ghani Achmani (081811633001)
 2. Fahmirullah Abdillah (081811633002)
 3. Muhammad Faris Arifin (081811633006)
@@ -89,8 +79,8 @@ SEGA (Sequence Diagram Generation) merupakan proyek Django berbasis website yang
 7. Dean Farrel Radiany Wibowo (081811633054)
 
 ### Link
-* Dokumentasi proyek
-* Dataset
+* [Dokumentasi proyek](https://drive.google.com/file/d/1nzhnowDdi7366qWIdlz5c_QD-5zK9_wf/view?usp=sharing)
+* [Dataset](https://drive.google.com/file/d/1WKqwhLu1AEXmzs0XEG-BUkmlCks0Jf8l/view?usp=sharing)
 
 ### Kontak
 1. Naufal Ghani Achmani: naufalghaniachmani@gmail.com
