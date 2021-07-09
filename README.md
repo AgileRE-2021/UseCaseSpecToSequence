@@ -5,10 +5,11 @@
     <img src="https://user-images.githubusercontent.com/61226035/125086165-8d781a80-e0f5-11eb-8e41-2e74d6632a24.PNG" alt="Logo" width="1000" height="410">
   </a>
   <p align="center">
+    Tutorial dapat klik dibawah ini!
     <br />
     <a href=https://youtu.be/JlwfAEZCmZI><strong>About Project »</strong></a>
     <br />
-    
+
 </p>
 
 # SEGA (Sequence Diagram Generation) 1.0
